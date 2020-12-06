@@ -1,0 +1,66 @@
+<nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-secondary p-3">
+    <a class="navbar-brand" routerLink="/">MEETUP</a><img class="img-fluid" src="https://static.thenounproject.com/png/1875502-200.png" width="50" alt="">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a style="border: none;" mat-raised-button routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" class="nav-link text-dark" routerLink="/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a style="border: none;" mat-raised-button routerLinkActive="active" class="nav-link ml-4 mr-4 text-dark" routerLink="/login">LOGIN</a>
+            </li>
+            <li class="nav-item">
+                <a style="border: none;" mat-raised-button routerLinkActive="active" class="nav-link text-dark" routerLink="/teacher">SIGNUP</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div>
+
+    <router-outlet></router-outlet>
+
+</div>
+
+
+
+<!-- <nav class=" text-center navbar navbar-expand-lg navbar-dark bg-primary p-4">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <div class="collapse navbar-collapse " id="navbarNavAltMarkup">
+        <div class="navbar-nav ml-auto">
+            <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-item nav-link" href="#">Features</a>
+            <a class="nav-item nav-link" href="#">Pricing</a>
+
+        </div>
+    </div>
+</nav>
+<!-- ------------------------------------------------------------------------------------- 
+
+<div class="">
+<ngb-carousel>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img width="100%" height="640px" src="https://images.pexels.com/photos/40465/pexels-photo-40465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Random first slide">
+        </div>
+        <div class="carousel-caption text-dark mt-5" style="margin-top: 30%;">
+            <h1 class="text-dark">Student Details.......</h1>
+            <a routerLink="/login">Login</a>
+            <router-outlet></router-outlet>
+        </div>
+    </ng-template>
+    <ng-template ngbSlide>
+        <div class="picsum-img-wrapper">
+            <img width="100%" height="640px" src="https://images.pexels.com/photos/33101/new-wing-emergency-at-the-moment.jpg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Random third slide">
+        </div>
+        <div class="carousel-caption" style="margin-bottom: 20%;">
+            <h1>Thank You......................</h1>
+        </div>
+    </ng-template>
+</ngb-carousel>
+</div> -->

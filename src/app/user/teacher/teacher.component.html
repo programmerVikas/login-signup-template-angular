@@ -1,0 +1,94 @@
+<center>
+    <div class="container">
+        <div class="row mt-5 mb-5">
+            <div class="col-6 offset-3 card p-2 " style=" box-shadow: 5px 5px 5px 5px rgb(53, 36, 36);">
+                <div class="card-header text-center" style="background: none;">
+                    <h3>SIGN UP...</h3>
+                </div>
+                <div class=" card-body">
+
+                    <form #simpleForm="ngForm" (ngSubmit)="fetch(simpleForm.value)">
+                        <p class="">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input name="uname" matInput ngModel placeholder="Enter Username">
+                                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                            &nbsp;&nbsp;&nbsp;
+                            <mat-form-field appearance="outline">
+                                <mat-label>Email</mat-label>
+                                <input matInput name="mail" ngModel placeholder="Enter email">
+                                <mat-icon matSuffix>mail</mat-icon>
+                            </mat-form-field>
+                        </p>
+                        <p>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input name="pass" matInput ngModel [type]="hide ? 'password' : 'text'" placeholder="Enter Password">
+                                <span style="cursor: pointer; border: none; outline: none; background: none; " mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </span>
+                            </mat-form-field>
+                            &nbsp;&nbsp;&nbsp;
+                            <mat-form-field appearance="outline">
+                                <mat-label>Confirm Password</mat-label>
+                                <input name="cpass" matInput ngModel [type]="hide ? 'password' : 'text'" placeholder="Enter Password">
+                                <span style="cursor: pointer; border: none; outline: none; background: none; " mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                            </span>
+                            </mat-form-field><br>
+                        </p>
+                        <div class="text-center ">
+                            <button mat-raised-button>SIGNUP</button>
+                        </div>
+
+                    </form>
+                </div>
+                <div *ngIf="teacher_value == ''; else elseBlock">
+                    <p>Please Sign up </p>
+                </div>
+
+                <ng-template #elseBlock>
+                    <div *ngIf="teacher_value.uname != '' && teacher_value.mail != '' && teacher_value.pass != '' && teacher_value.cpass != ''; else elseBlock2">
+                        <div class="card-footer" *ngIf="teacher_value.pass == teacher_value.cpass; else elseBlock2">
+                            <div class="card-header" style="background: none;">
+                                <h3>Your Details...</h3>
+                            </div>
+                            <div class="card-body text-justify" style="float: left;">
+                                <div>
+                                    <table class="table">
+                                        <tr>
+                                            <th>NAME</th>
+                                            <th>@EMAIL</th>
+                                            <th>PASSWORD</th>
+                                            <th>CONFIRM-PASSWORD</th>
+                                        </tr>
+                                        <tr>
+                                            <td>{{teacher_value.uname}}</td>
+                                            <td>{{teacher_value.mail}}</td>
+                                            <td class="text-center">{{teacher_value.pass}}</td>
+                                            <td class="text-center">{{teacher_value.cpass}}</td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <ng-template #elseBlock2>
+                            <div class="alert alert-warning" role="alert">
+                                Please carefully fill your confirm password...
+                            </div>
+                        </ng-template>
+                    </div>
+                    <ng-template #elseBlock2>
+                        <div class="alert alert-warning" role="alert">
+                            Please carefully fill your details
+                        </div>
+                    </ng-template>
+                </ng-template>
+            </div>
+
+        </div>
+
+    </div>
+
+</center>
